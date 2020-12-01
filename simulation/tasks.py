@@ -65,9 +65,14 @@ def run_year(food, agricultural_production, fertility_start, fertility_end,infan
     print(persons_age)
 
     infantMortality *= 0.985
-    return infantMortality
+    return [infantMortality, persons_age]
 
-start_simulation()
-while len(totalPopulation) < 100000 and len(totalPopulation) > 1:
-    infantMortality = run_year(food,agricultural_production,fertility_start, fertility_end,infantMortality,disaster_chance)
-
+def run_simulation():
+    start_simulation()
+    infantMortality = 5
+    populations = []
+    while len(totalPopulation) < 100000 and len(totalPopulation) > 1:
+        data = run_year(food,agricultural_production,fertility_start, fertility_end,infantMortality,disaster_chance)
+        infantMortality = data[0]
+        populations.append(data[1])
+    return populations
