@@ -1,4 +1,4 @@
-# population_simulation
+# population simulation with python
 Algorithm for simulating population after certain time based on factors like food, agricultural production, natural disasters, fertility rate 
 how to run:
 clone the project to your local machine then on project directory run:
